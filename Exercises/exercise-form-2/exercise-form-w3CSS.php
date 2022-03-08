@@ -1,13 +1,14 @@
 <?php
 //Not the idealist associative array but one required for learning. DO NOT MODIFY
 $forms = [
-    ["action" => "exercise-form-2.php", "method" => "post"],
+    ["action" => "management.php", "method" => "post"],
     ["type" => "text", "id" => "lastName", "name" => "lastName", "label" => "Last Name"],
     ["type" => "text", "id" => "firstName", "name" => "firstName", "label" => "First Name"],
     ["type" => "password", "id" => "pwd", "name" => "pwd", "label" => "Password"],
     ["type" => "checkbox", "id" => "enroll", "name" => "enroll", "label" => "Enroll"],
     ["type" => "checkbox", "id" => "terms", "name" => "terms", "label" => "Accept Terms & Conditions"],
     ["type" => "submit", "id" => "submit", "name" => "input", "label" => "Sent"],
+    ["type"=> $_POST['type'],"id"=> $_POST['id'],"name"=>$_POST['name'],"label"=>$_POST['label']]
 ];
 
 ?>
@@ -39,7 +40,11 @@ $forms = [
     </p>
     <p>
         <label class="w3-text-white"><?php echo $forms[5]['label']?></label>
-        <input type="checkbox" name="<?php echo $forms[5]['name']?>" >
+        <input type="checkbox" name="<?php echo $forms[5]['name']?>">
+    </p>
+    <p>
+        <label class="w3-text-white"><?php echo $forms[7]['label']?></label>
+        <input type="<?= $forms[7]['type']?>" name="<?php echo $forms[7]['name']?>" id="<?php echo $forms[7]['id']?>">
     </p>
     <button class="w3-btn w3-Indigo" style="width: 1340px" type="submit"><?php echo $forms[6]['id']?></button></p>
 </form>
